@@ -63,9 +63,11 @@ public class ThreadPoolExecutorLean {
             int finalI = i;
             try {
                 EXECUTOR_SERVICE.execute(new Thread(() -> {
+                    System.out.println("============");
                     System.out.println(String.format("开始执行任务：%s", finalI));
                     System.out.println(String.format("任务%s活跃线程数：%s", finalI, EXECUTOR_SERVICE.getActiveCount()));
                     System.out.println(String.format("任务%s队列中的数量：%s", finalI, EXECUTOR_SERVICE.getQueue().size()));
+                    System.out.println("============");
                     try {
                         Thread.sleep(20000);
                     } catch (InterruptedException e) {
