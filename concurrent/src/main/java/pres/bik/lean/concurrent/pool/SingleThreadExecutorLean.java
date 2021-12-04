@@ -1,23 +1,18 @@
-package pres.bik.lean.concurrent;
+package pres.bik.lean.concurrent.pool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * FixedThreadPool
  * @author yangkaifei
  * @version 1.0
- * @date 2021/11/28 6:35 下午
+ * @date 2021/11/28 7:00 下午
  */
-public class FixedThreadPoolLean {
-    /**
-     * 线程数
-     */
-    private static final int THREAD_NUMBER = 2;
+public class SingleThreadExecutorLean {
     /**
      * 线程池
      */
-    private static final ExecutorService EXECUTOR_SERVICE = Executors.newFixedThreadPool(THREAD_NUMBER);
+    private static final ExecutorService EXECUTOR_SERVICE = Executors.newSingleThreadExecutor();
 
     public static void main(String[] args) {
         while (true) {
